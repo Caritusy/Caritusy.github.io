@@ -2,52 +2,105 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>NOLSTICE // DB</title>
+    <title>NOLSTICE // INTERNAL_DB</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --v-purp: #9d5ae5; --darker: #050505; }
-        body { background-color: var(--darker); color: #666; font-family: sans-serif; }
-        .m-card { background: #080808; border: 1px solid #111; cursor: crosshair; }
-        .m-card:hover { border-color: var(--v-purp); color: #eee; }
-        .desc { display: none; font-size: 11px; color: #444; border-top: 1px solid #111; padding-top: 8px; margin-top: 8px; }
-        .cat-title { color: #222; font-weight: 900; letter-spacing: 5px; }
+        :root { --v-purp: #9d5ae5; --darker: #060606; }
+        body { background-color: var(--darker); color: #555; font-family: 'Inter', sans-serif; cursor: crosshair; }
+        .m-card { background: #0a0a0a; border: 1px solid #151515; transition: 0.2s; }
+        .m-card:hover { border-color: var(--v-purp); color: #fff; }
+        .desc { display: none; font-size: 10px; color: #888; border-top: 1px solid #1a1a1a; padding-top: 8px; margin-top: 8px; font-style: italic; }
+        .cat-label { font-size: 10px; font-weight: 900; letter-spacing: 3px; color: #222; margin-bottom: 12px; display: block; border-left: 2px solid #1a1a1a; padding-left: 8px; }
     </style>
 </head>
-<body class="p-10">
+<body class="p-8 md:p-16">
 
-    <div class="max-w-5xl mx-auto">
-        <header class="mb-20 flex justify-between items-end border-b border-white/5 pb-4">
-            <h1 class="text-white font-bold italic tracking-tighter">NOLSTICE_DB</h1>
-            <span class="text-[9px] text-red-800 font-mono font-bold">LOCKED_SOURCE // BEYOND_4999</span>
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-16 border-b border-zinc-900 pb-6 flex justify-between items-end">
+            <div>
+                <h1 class="text-white font-bold tracking-tighter text-xl">NOLSTICE_MODULES</h1>
+                <p class="text-[9px] text-zinc-600">Total Unpacked: 78 | Integrity: 100%</p>
+            </div>
+            <a href="index.html" class="text-[9px] hover:text-[#9d5ae5]">DISCONNECT_LINK</a>
         </header>
 
-        <section class="mb-12">
-            <h2 class="cat-title text-xs uppercase mb-6">COMBAT_PROT</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <div class="m-card p-3" onclick="s(this)">
-                    <div class="text-[11px] font-bold">Aura</div>
-                    <div class="desc italic">Target identification and neutralization. Multi-threaded.</div>
-                </div>
-                <div class="m-card p-3" onclick="s(this)">
-                    <div class="text-[11px] font-bold">Disabler</div>
-                    <div class="desc italic">Protocol integrity interference. Standard bypass.</div>
-                </div>
-                <div class="m-card p-3" onclick="s(this)">
-                    <div class="text-[11px] font-bold">BMW</div>
-                    <div class="desc italic">Proprietary velocity algorithm. High-end only.</div>
-                </div>
-                </div>
-        </section>
+        <span class="cat-label uppercase">Combat_Systems</span>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-12">
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Aura</span><div class="desc">Multi-entity neutralization logic. Optimized for latency.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Aimbot</span><div class="desc">Vector-based rotational correction. Smooth-step enabled.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">TriggerBot</span><div class="desc">Zero-delay crosshair validation.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">AutoClicker</span><div class="desc">Gaussian distribution CPS jitter.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Reach</span><div class="desc">Packet-level distance manipulation. Range [3.0-6.0].</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Criticals</span><div class="desc">Force-critical damage via micro-packets.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">HitBoxes</span><div class="desc">Expand target collision geometry.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">CrystalAura</span><div class="desc">Optimized end-crystal detonation sequencer.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Cage</span><div class="desc">Instant surround placement. Locking mechanism.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">AutoBow</span><div class="desc">Predictive projectile release. Max velocity.</div></div>
+        </div>
 
-        <section class="mt-32 text-center">
-            <a href="index.html" class="text-[10px] hover:text-white transition">← DISCONNECT</a>
-        </section>
+        <span class="cat-label uppercase">Movement_Kernels</span>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-12">
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Fly</span><div class="desc">Advanced bypass for anti-cheat flight detection.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Velocity</span><div class="desc">Knockback suppression [0%-100%].</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">NoSlowDown</span><div class="desc">Inventory/Usage slowdown negation.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">AntiImmobile</span><div class="desc">Bypass freeze/immobile status effects.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Sprint</span><div class="desc">Force sprint state regardless of exhaustion.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Speed</span><div class="desc">Bhop / On-Ground acceleration matrices.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">BMW</span><div class="desc">Exclusive high-velocity algorithm. High-end build only.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">InventoryMove</span><div class="desc">Full movement while accessing container data.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">NoJumpDelay</span><div class="desc">Remove jump exhaustion cooldown.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Phase</span><div class="desc">Noclip through thin collision surfaces.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">FastStop</span><div class="desc">Instant momentum reset.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Step</span><div class="desc">Automated elevation step-up. Height: 1.0 - 2.5.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">LongJump</span><div class="desc">Momentum-buffered jump expansion.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">AirJump</span><div class="desc">Mid-air jump execution. Multiple triggers.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Jetpack</span><div class="desc">Vertical propulsion via motion modification.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">DamageBoost</span><div class="desc">Convert damage intake into directional velocity.</div></div>
+        </div>
+
+        <span class="cat-label uppercase">Player_Exploits</span>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-12">
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">GhostHand</span><div class="desc">Interact with blocks through barriers.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Timer</span><div class="desc">Tick speed manipulation [0.1x - 10.0x].</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">ChestStealer</span><div class="desc">High-speed container content extraction.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Scaffold</span><div class="desc">Packet-based automated block bridging.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">SpiderMan</span><div class="desc">Wall-climb via vertical motion injection.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">AutoBlockin</span><div class="desc">Defensive containment automation.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">AutoTool</span><div class="desc">Best-tool-for-block auto switching.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Freecam</span><div class="desc">Decouple camera from entity body.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">NoFall</span><div class="desc">Fall damage cancellation via packet reset.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">IQBoost</span><div class="desc">Optimized Nolstice core priority manager.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">GodMode</span><div class="desc">Packet-state invincibility exploit.</div></div>
+        </div>
+
+        <span class="cat-label uppercase">Misc_Modules</span>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-12">
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">PacketLogger</span><div class="desc">Real-time data stream analysis.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Disabler</span><div class="desc">Bypass protocol for global anti-cheat engines.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">AntiBot</span><div class="desc">Filter server-side bot entities.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Blink</span><div class="desc">Buffer packets to simulate teleportation.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">Crasher</span><div class="desc">Overflow target server buffer.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">PyEditionFaker</span><div class="desc">Handshake spoofing for cross-platform access.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">HealthBypass</span><div class="desc">Bypass server-side health checks.</div></div>
+        </div>
+
+        <span class="cat-label uppercase">Visual_Render</span>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-12">
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">ESP / Tracers</span><div class="desc">Wall-hack and entity tracking lines.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">ChinaHat</span><div class="desc">Legacy decorative model rendering.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">MotionBlur</span><div class="desc">Accumulation buffer frame smoothing.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">JumpCircles</span><div class="desc">Procedural jump-impact ripples.</div></div>
+            <div class="m-card p-4" onclick="s(this)"><span class="text-xs">ConsensusUI</span><div class="desc">The original Nolstice interface architecture.</div></div>
+        </div>
+
     </div>
 
     <script>
         function s(e) {
             const d = e.querySelector('.desc');
-            d.style.display = d.style.display === 'block' ? 'none' : 'block';
+            const isOpen = d.style.display === 'block';
+            document.querySelectorAll('.desc').forEach(x => x.style.display = 'none');
+            d.style.display = isOpen ? 'none' : 'block';
         }
     </script>
 </body>
