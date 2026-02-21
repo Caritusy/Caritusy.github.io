@@ -2,40 +2,54 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOLSTICE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #050505; color: #444; font-family: 'Courier New', monospace; }
-        .glitch { color: #9d5ae5; text-shadow: 0 0 10px rgba(157, 90, 229, 0.5); font-family: sans-serif; }
-        .price-glitch { color: #ff0055; letter-spacing: 2px; }
-        .enter-btn { border: 1px solid #222; transition: all 0.5s; }
-        .enter-btn:hover { border-color: #9d5ae5; color: #eee; box-shadow: 0 0 20px rgba(157, 90, 229, 0.2); }
+        .glitch-text { color: #9d5ae5; text-shadow: 0 0 8px rgba(157, 90, 229, 0.3); }
+        .enter-btn { border: 1px solid #1a1a1a; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .enter-btn:hover { border-color: #9d5ae5; color: #eee; letter-spacing: 0.5em; }
+        #scramble-price { font-family: 'Consolas', monospace; color: #eee; font-weight: bold; }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen overflow-hidden">
 
     <div class="text-center">
-        <h1 class="text-4xl font-black tracking-[1em] mb-4 text-white opacity-90 italic">NOLSTICE</h1>
-        <div class="h-[1px] w-12 bg-[#9d5ae5] mx-auto mb-12"></div>
+        <h1 class="text-4xl font-black tracking-[1.2em] mb-2 text-white italic opacity-80">NOLSTICE</h1>
+        <div class="h-[1px] w-16 bg-gradient-to-right from-transparent via-[#9d5ae5] to-transparent mx-auto mb-16"></div>
         
-        <p class="text-[10px] uppercase tracking-[0.5em] mb-8 opacity-50">Private Binary Distribution</p>
-        
-        <div class="price-glitch text-xl mb-12 font-bold">
-            PRICE: <span class="select-none">̶$̶4̶,̶9̶9̶9̶  [̲̅$̲̅(̲̅5̶4̶8̶0̶)̲̅$̲̅] ▓▒░█</span>
+        <div class="mb-12">
+            <p class="text-[9px] uppercase tracking-[0.4em] mb-4 opacity-40">Entry Protocol: $4,999 Reserved</p>
+            <div id="scramble-price" class="text-2xl tracking-tighter opacity-90"></div>
         </div>
 
-        <div class="flex flex-col gap-6 items-center">
-            <a href="module.html" class="enter-btn px-12 py-3 rounded-sm text-xs tracking-[0.3em] uppercase">
-                Access Modules
+        <div class="flex flex-col gap-8 items-center">
+            <a href="module.html" class="enter-btn px-16 py-4 rounded-sm text-[10px] tracking-[0.4em] uppercase">
+                Initialize Modules
             </a>
-            <p class="text-[9px] text-red-900/40 font-bold uppercase italic">No Source Code. No Refund. No Trace.</p>
+            <p class="text-[8px] text-zinc-800 tracking-widest uppercase italic">Memory integrity secured. Binary non-distributable.</p>
         </div>
     </div>
 
-    <footer class="absolute bottom-10 text-[10px] tracking-widest opacity-20 hover:opacity-100 transition">
-        CONNECTION: ENCRYPTED // 2026_EST
-    </footer>
+    <script>
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
+        const priceElement = document.getElementById('scramble-price');
+        
+        function scramble() {
+            let result = '';
+            // 每4位生成一组不同的扰动逻辑
+            for(let i = 0; i < 4; i++) {
+                let segment = '';
+                for(let j = 0; j < 4; j++) {
+                    segment += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                result += segment + (i < 3 ? '-' : '');
+            }
+            priceElement.innerText = `[ ${result} ]`;
+        }
 
+        // 模拟加壳波动：高频随机化
+        setInterval(scramble, 60);
+    </script>
 </body>
 </html>
