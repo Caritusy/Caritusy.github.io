@@ -2,140 +2,52 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nolstice | Modules Database</title>
+    <title>NOLSTICE // DB</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --vape-purple: #9d5ae5; --bg-dark: #080808; --card-dark: #111111; }
-        body { background-color: var(--bg-dark); color: #d1d1d1; font-family: 'Inter', system-ui, sans-serif; }
-        .module-card { background: var(--card-dark); border: 1px solid #1f1f1f; transition: all 0.2s; }
-        .module-card:hover { border-color: var(--vape-purple); background: #161616; transform: translateY(-2px); }
-        .details { display: none; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.875rem; color: #888; }
-        .tag { font-size: 9px; padding: 1px 5px; border-radius: 3px; background: rgba(157, 90, 229, 0.1); color: var(--vape-purple); font-weight: bold; }
-        .category-title { border-left: 3px solid var(--vape-purple); padding-left: 1rem; }
+        :root { --v-purp: #9d5ae5; --darker: #050505; }
+        body { background-color: var(--darker); color: #666; font-family: sans-serif; }
+        .m-card { background: #080808; border: 1px solid #111; cursor: crosshair; }
+        .m-card:hover { border-color: var(--v-purp); color: #eee; }
+        .desc { display: none; font-size: 11px; color: #444; border-top: 1px solid #111; padding-top: 8px; margin-top: 8px; }
+        .cat-title { color: #222; font-weight: 900; letter-spacing: 5px; }
     </style>
 </head>
-<body>
+<body class="p-10">
 
-    <nav class="border-b border-white/5 px-8 py-5 flex justify-between items-center bg-black/80 backdrop-blur-xl sticky top-0 z-50">
-        <div class="flex items-center gap-3">
-            <a href="index.html" class="w-8 h-8 bg-[#9d5ae5] rounded flex items-center justify-center text-black font-black italic">N</a>
-            <span class="font-bold tracking-widest text-white uppercase text-sm">Nolstice Modules</span>
-        </div>
-        <div class="text-[10px] font-mono text-gray-600 uppercase tracking-widest">Pricing: $4,999 / Status: Stable</div>
-    </nav>
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-20 flex justify-between items-end border-b border-white/5 pb-4">
+            <h1 class="text-white font-bold italic tracking-tighter">NOLSTICE_DB</h1>
+            <span class="text-[9px] text-red-800 font-mono font-bold">LOCKED_SOURCE // BEYOND_4999</span>
+        </header>
 
-    <div class="max-w-7xl mx-auto p-6 md:p-12">
-        
-        <section class="mb-16">
-            <h2 class="category-title text-xl font-black text-white mb-6 uppercase tracking-wider">Visual Core (Init)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)">
-                    <div class="flex justify-between items-start"><div><h3 class="font-bold text-gray-100">HudEditor</h3><p class="text-[10px] text-gray-500 mt-1">Interface Management</p></div><span class="tag">Static</span></div>
-                    <div class="details">可视化编辑所有界面元素的位置、缩放和样式。</div>
+        <section class="mb-12">
+            <h2 class="cat-title text-xs uppercase mb-6">COMBAT_PROT</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div class="m-card p-3" onclick="s(this)">
+                    <div class="text-[11px] font-bold">Aura</div>
+                    <div class="desc italic">Target identification and neutralization. Multi-threaded.</div>
                 </div>
-            </div>
-        </section>
-
-        <section class="mb-16">
-            <h2 class="category-title text-xl font-black text-white mb-6 uppercase tracking-wider">Combat / 战斗模块</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)">
-                    <div class="flex justify-between items-center"><h3 class="font-bold">Aura</h3><span class="tag">Killer</span></div>
-                    <div class="details">全自动杀戮光环，支持多目标同步计算及多种攻击模式。</div>
+                <div class="m-card p-3" onclick="s(this)">
+                    <div class="text-[11px] font-bold">Disabler</div>
+                    <div class="desc italic">Protocol integrity interference. Standard bypass.</div>
                 </div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Aimbot</h3><div class="details">高精度的自瞄系统，支持平滑度调节以绕过人工观察。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">TriggerBot</h3><div class="details">准星经过目标时自动触发攻击。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AutoClicker</h3><div class="details">高频率连点，支持随机化 CPS 抖动。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Reach</h3><div class="details">扩展攻击距离，利用包转换技术实现超距打击。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Criticals</h3><div class="details">强制每一击产生暴击，无需跳跃动作。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">HitBoxes</h3><div class="details">通过修改本地碰撞箱体积，显著提升命中率。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">CrystalAura</h3><div class="details">针对爆破竞技优化的水晶放置与摧毁逻辑。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Cage</h3><div class="details">自动在目标周围放置方块进行困锁。</div></div>
-                <div class="module-card p-5 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AutoBow</h3><div class="details">自动拉弓并预测目标弹道进行释放。</div></div>
-            </div>
+                <div class="m-card p-3" onclick="s(this)">
+                    <div class="text-[11px] font-bold">BMW</div>
+                    <div class="desc italic">Proprietary velocity algorithm. High-end only.</div>
+                </div>
+                </div>
         </section>
 
-        <section class="mb-16">
-            <h2 class="category-title text-xl font-black text-white mb-6 uppercase tracking-wider">Movement / 运动模块</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">Fly</h3><div class="details">支持绕过各类反作弊的飞行模式。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">Velocity</h3><div class="details">修改受到的击退力度（0%-100%）。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">NoSlowDown</h3><div class="details">消除拉弓、进食时的减速效果。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">AntiImmobile</h3><div class="details">对抗无法移动的负面状态。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">Sprint</h3><div class="details">自动保持疾跑状态。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">Speed</h3><div class="details">多种模式的加速移动（Bhop, OnGround）。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">BMW</h3><div class="details">独家高性能移动模组，追求极致速度。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">InventoryMove</h3><div class="details">允许在开启背包时自由移动。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">NoJumpDelay</h3><div class="details">移除连跳之间的延迟。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">Phase</h3><div class="details">穿过特定厚度的实体方块。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">FastStop</h3><div class="details">松开按键后立即停止移动，防止滑步。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">Step</h3><div class="details">像走半砖一样直接走上全砖。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">LongJump</h3><div class="details">利用动能实现远距离跳跃。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">AirJump</h3><div class="details">允许在空中再次跳跃。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">Jetpack</h3><div class="details">模拟垂直升空的飞行体验。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold text-sm">DamageBoost</h3><div class="details">受到伤害时利用冲击力进行加速。</div></div>
-            </div>
+        <section class="mt-32 text-center">
+            <a href="index.html" class="text-[10px] hover:text-white transition">← DISCONNECT</a>
         </section>
-
-        <section class="mb-16">
-            <h2 class="category-title text-xl font-black text-white mb-6 uppercase tracking-wider">Player / 玩家管理</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">GhostHand</h3><div class="details">隔墙对容器或方块进行交互。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Timer</h3><div class="details">修改游戏运行的时钟频率。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">ChestStealer</h3><div class="details">瞬间从箱子中提取所有物品。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">ChestAura</h3><div class="details">自动开启周围隐藏的箱子。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">InventoryManager</h3><div class="details">智能整理背包，丢弃无用杂物。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Scaffold</h3><div class="details">全自动架桥，提供最稳定的放置逻辑。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">SpiderMan</h3><div class="details">像蜘蛛一样攀爬垂直墙面。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AutoBlockin</h3><div class="details">在特定环境下自动将自己封入方块保护。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AutoTool</h3><div class="details">针对挖掘的方块自动切换最佳工具。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Derp</h3><div class="details">让你的身体疯狂旋转以迷惑敌人。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Freecam</h3><div class="details">灵魂出窍，自由观察周围环境。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">NoFall</h3><div class="details">消除高空坠落造成的伤害。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AntiVoid</h3><div class="details">跌入虚空时自动将你弹回。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">IQBoost</h3><div class="details">针对 Nolstice 核心的执行逻辑优化。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">GodMode</h3><div class="details">在特定条件下维持无敌状态。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AutoStew</h3><div class="details">自动食用可疑的炖菜。</div></div>
-            </div>
-        </section>
-
-        <section class="mb-16">
-            <h2 class="category-title text-xl font-black text-white mb-6 uppercase tracking-wider">Misc / 综合杂项</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">PacketLogger</h3><div class="details">实时抓取并显示进出数据包。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AntiBot</h3><div class="details">智能过滤反作弊生成的虚假实体。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">AntiAntiBot</h3><div class="details">更高级的反机器人对抗策略。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Disabler</h3><div class="details">核心模块：用于破坏主流反作弊系统的检测平衡。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Blink</h3><div class="details">暂时挂起数据包，实现瞬移效果。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Crasher</h3><div class="details">利用包漏洞尝试让目标服务器溢出崩溃。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">PyEditionFaker</h3><div class="details">修改版本标识以进入不同类型的服务器。</div></div>
-                <div class="module-card p-4 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">HealthBypass</h3><div class="details">绕过特定服务器对生命值的检测限制。</div></div>
-            </div>
-        </section>
-
-        <section class="mb-16">
-            <h2 class="category-title text-xl font-black text-white mb-6 uppercase tracking-wider">Visuals / 视觉增强</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[10px]">
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">ESP / Tracers</h3><div class="details">实体透视与连接线追踪。</div></div>
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">BlockESP</h3><div class="details">查找特定类型的方块。</div></div>
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">MotionBlur</h3><div class="details">增加电影级的动态模糊效果。</div></div>
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">ChinaHat</h3><div class="details">在角色上方渲染动态模型装饰。</div></div>
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">FullBright</h3><div class="details">永久夜视效果。</div></div>
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">JumpCircles</h3><div class="details">跳跃时在脚下生成扩散涟漪。</div></div>
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">Ambience</h3><div class="details">自定义世界天气、光照与氛围感。</div></div>
-                <div class="module-card p-3 rounded-lg cursor-pointer" onclick="t(this)"><h3 class="font-bold">ConsensusUI</h3><div class="details">启用 Nolstice 独家的响应式用户界面架构。</div></div>
-            </div>
-        </section>
-
     </div>
 
     <script>
-        function t(e) {
-            const d = e.querySelector('.details');
-            const isOpen = d.style.display === 'block';
-            document.querySelectorAll('.details').forEach(x => x.style.display = 'none');
-            d.style.display = isOpen ? 'none' : 'block';
+        function s(e) {
+            const d = e.querySelector('.desc');
+            d.style.display = d.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
